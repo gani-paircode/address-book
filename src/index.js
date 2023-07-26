@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const uuidv4 = require("uuid");
-const { loginRoutes, userRoutes, reportsRoutes } = require("./routes");
+const { authRoutes, userRoutes, reportsRoutes } = require("./routes");
 const { readDataFromFile } = require('./model/files');
 const { LOGIN_FILE_PATH, COOKIES_NAME } = require('./constants/general');
 
@@ -45,6 +45,8 @@ const authenticateReq = async (req, res, next) => {
     }
 }
 
-app.use("/login", loginRoutes);
+app.use("/auth", authRoutes);
 app.use("/users", authenticateReq, userRoutes);
 app.use("/reports", authenticateReq, reportsRoutes);
+
+module.exports = { authenticateReq: authenticateReq };
