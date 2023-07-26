@@ -49,4 +49,4 @@ app.use("/auth", authRoutes);
 app.use("/users", authenticateReq, userRoutes);
 app.use("/reports", authenticateReq, reportsRoutes);
 
-module.exports = { authenticateReq: authenticateReq };
+module.exports = { authenticateReq };
