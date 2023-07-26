@@ -5,7 +5,7 @@ const SHA256 = require("crypto-js/sha256");
 const _ = require("lodash");
 const { LOGIN_FILE_PATH, COOKIES_NAME } = require('../constants/general');
 const { readDataFromFile, writeDataToFile } = require('../model/files');
-const { authenticateReq, ...rest } = require('../index');
+const authenticateReq = require('../index').authenticateReq;
 
 const getHashedPassword = (plainPassword) => SHA256(plainPassword).toString();
 const generateLoginToken = (phoneNumber) => {
@@ -15,9 +15,7 @@ const generateLoginToken = (phoneNumber) => {
   return _.shuffle(batakaa).join("-");
 };
 
-console.log('authenticateReq ', authenticateReq, rest);
-
-router.post('/v1/update-password', authenticateReq,  async (req, res) => {
+router.post('/v1/update-password',  async (req, res) => {
   const { currentPassword, password, repeatPassword } = req.body;
   console.log('credentials in login/v1 ', { currentPassword, password, repeatPassword });
   try {
@@ -27,7 +25,7 @@ router.post('/v1/update-password', authenticateReq,  async (req, res) => {
         req.headers[COOKIES_NAME.PHONE] === u.phoneNumber
     );
     if (!user) {
-      res.status(400).send({ message: 'Invalid id or password' });
+      res.status(400).send({ message: 'User not found' });
       return;
     }
     if (user.isActive === false) {
@@ -35,7 +33,7 @@ router.post('/v1/update-password', authenticateReq,  async (req, res) => {
       return;
     }
  
-    if(user.hashedPassword !== getHashedPassword(currentPassword)){
+    if(user.hashedPassword !== currentHashedPassword){
       res.status(403).send({ message: 'Current password is invalid' });
       return;
     }
