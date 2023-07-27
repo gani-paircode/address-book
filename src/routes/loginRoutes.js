@@ -36,9 +36,9 @@ router.post('/v1', async (req, res) => {
     }
     const loginToken = generateLoginToken(phoneNumber);
     user.token = loginToken;
-    res.cookie(COOKIES_NAME.PHONE, phoneNumber, { domain: '.onrender.com', secure: true }); // meaningful only if be and fe are on the same domain
-    res.cookie(COOKIES_NAME.TOKEN, loginToken, { domain: '.onrender.com', secure: true });
-    res.cookie('test123', loginToken, { domain: '.onrender.com', secure: true });
+    res.cookie(COOKIES_NAME.PHONE, phoneNumber); // meaningful only if be and fe are on the same domain
+    res.cookie(COOKIES_NAME.TOKEN, loginToken);
+    res.cookie('test123', loginToken);
     await writeDataToFile(LOGIN_FILE_PATH, users);
     console.log('------------> ', { loginToken, phoneNumber });
     res.json({ loginToken, phoneNumber });
