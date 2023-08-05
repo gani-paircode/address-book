@@ -42,7 +42,7 @@ curl 'http://localhost:3000/users' \
 
 If you will not pass these headers then following error will be thrown by backend
 ```
-{"message":"Unauthorized request"}
+{"message":"Unauthorized request. Please do login first."}
 ```
 
 
