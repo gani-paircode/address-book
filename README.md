@@ -10,16 +10,16 @@ Execute following command to run the server on your local.
 Here are the curl requests
 
 ```
-curl --location --request POST 'localhost:3000/login/v1' \
+curl --location --request POST 'http://localhost:5000/auth/v1/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "phoneNumber": "9000000000",
-    "password": "9000000000"
+    "phoneNumber": "9200200200",
+    "password": "Aman1234"
 }'
 Response
 {
     "loginToken": "8e99-e344c4d8-1b3d-2b0bddc74c84-8c1e307f97d6-4388-14066795518165964-b484-408c-5ed566f9-133e-8803527227295433",
-    "phoneNumber": "9000000000"
+    "phoneNumber": "9200200200"
 }
 ```
 
@@ -27,7 +27,7 @@ Send the loginToken and phoneNumber value in the rest the APIs. Sample
 ```
 fetch("http://localhost:3000/users", {
   "headers": {
-    "x-auth-phone": "9000000000",
+    "x-auth-phone": "9200200200",
     "x-auth-token": "8e99-e344c4d8-1b3d-2b0bddc74c84-8c1e307f97d6-4388-14066795518165964-b484-408c-5ed566f9-133e-8803527227295433"
   },
   "method": "GET",
