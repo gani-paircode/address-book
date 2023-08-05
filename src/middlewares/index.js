@@ -18,8 +18,8 @@ const authenticateReq = async (req, res, next) => {
             });
             return;
         }
-
-        if (userRoutes.isActive === false) {
+        const user = loginUsers[index];
+        if (user.isActive === false) {
             res.cookie(COOKIES_NAME.PHONE, '');
             res.cookie(COOKIES_NAME.TOKEN, '');
             res.status(403).send({ 

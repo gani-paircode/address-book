@@ -1,30 +1,16 @@
 [
   {
-    "name": "Mina",
-    "phoneNumber": "9100100100",
-    "hashedPassword": "fbc725ff4f6efad447b0fc0a2eade7211bba77267d30a1ac29960cb8a7172996",
-    "token": "",
-    "isActive": false
-  },
-  {
-    "name": "Jisha",
+    "name": "Raj",
     "phoneNumber": "9600600600",
-    "hashedPassword": "70a5474d6cd368c80f5cc74ec6b363bef06f453ec0ce9cd571c5951b7447633a",
-    "token": "99e3-5aa91d79-208a511416dc-bdf4-7f9a0218db9f-16937483857160378-428b-59dda9fc-4486-c414-7847432685294817-8fc1",
+    "hashedPassword": "b54092fee20dfa86abea42e798ff6669671573769f2c869eb7b8be91004e6a03",
+    "token": "",
     "isActive": true
   },
   {
-    "name": "Aaman",
-    "phoneNumber": "9300300300",
-    "isActive": true,
-    "hashedPassword": "e5857b335afdf35ca81a110bc81f38682f8a89892cc597f5398dfef82d42b513",
-    "token": "9871-5e92b4e5-4180-ceaf-423c-746996b40175-83a6-aadf-5336076363444109-55678046598194065-6cb4abce3ffa-2cdc3273"
-  },
-  {
-    "name": "Raj",
+    "name": "Aman",
     "phoneNumber": "9200200200",
-    "isActive": false,
-    "hashedPassword": "5d1ce093d11f093703a4eb9903c720a1b97b838c0ae4fcef561d6edc243d5b45",
-    "token": "a3fd-3d62-4291-1675041824701189-f0c47bd0c9e7-2160e1ef-8b5f51d21549-c1dcff85-36712187286258717-4676-35a4-a269"
+    "hashedPassword": "100a50bef700d11fa44cd532ceeff7becdc5cc023ceb23eb6977bf89fb115f03",
+    "token": "4a08-4202226459995425-bde2-408af973b7b9-ac69-c710eae0a550-9206d721-7156157349084433-3299-a74a-4f33-4bcc4532",
+    "isActive": true
   }
 ]
